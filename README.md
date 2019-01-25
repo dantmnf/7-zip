@@ -6,7 +6,7 @@ This allows you to build 7-zip with another cursed compiler.
 
 We add options to control LTO/LTCG and NSIS script decompiling.
 
-Note: You still need MSVC assembler (ml/ml64) for assembly code. <br>
+**Note**: You still need MSVC assembler (ml/ml64) for assembly code. <br>
 e. g. `cmake -DCMAKE_ASM_MASM_COMPILER='/c/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/ml64.exe'`
 
 Currently we have the following targets in CMake:
