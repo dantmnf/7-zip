@@ -19,7 +19,7 @@ check_ipo_supported(RESULT ipo_supported OUTPUT error)
 
 add_definitions(-DUNICODE -D_UNICODE)
 
-if(MSVC)
+if(MSVC OR "${CLANG_CXX_COMPILER}" MATCHES "clang-cl")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Gy -Gw")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Gy -Gw")
   set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS} /MANIFEST:NO")
@@ -29,9 +29,12 @@ else()
   add_library(htmlhelp STATIC contrib/htmlhelp.c)
 endif()
 
+if("${CMAKE_CXX_COMPILER}" MATCHES "clang-cl")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++11-narrowing")
+endif()
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-  set(CMAKE_ASM_MASM_FLAGS "${CMAKE_ASM_MASM_FLAGS} -Dx64")
+  add_definitions(-Dx64)
   add_definitions(-D_LZMA_DEC_OPT)
   set(LZMA_DEC_FILES Asm/x86/LzmaDecOpt.asm)
 else()
