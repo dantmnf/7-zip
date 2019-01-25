@@ -45,7 +45,7 @@ BEGIN
   IDS_EXTRACT_MSG_DATA_ERROR           "Data error"
   IDS_EXTRACT_MSG_CRC_ERROR            "CRC failed"
   IDS_EXTRACT_MSG_UNAVAILABLE_DATA     "Unavailable data"
-  IDS_EXTRACT_MSG_UEXPECTED_END        "Unexpected end of data";
+  IDS_EXTRACT_MSG_UEXPECTED_END        "Unexpected end of data"
   IDS_EXTRACT_MSG_DATA_AFTER_END       "There are some data after the end of the payload data"  
   IDS_EXTRACT_MSG_IS_NOT_ARC           "Is not archive"  
   IDS_EXTRACT_MSG_HEADERS_ERROR        "Headers Error"
