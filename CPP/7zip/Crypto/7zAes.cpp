@@ -164,7 +164,7 @@ STDMETHODIMP CEncoder::ResetInitVector()
 {
   for (unsigned i = 0; i < sizeof(_iv); i++)
     _iv[i] = 0;
-  _ivSize = 8;
+  _ivSize = 16;
   g_RandomGenerator.Generate(_iv, _ivSize);
   return S_OK;
 }
